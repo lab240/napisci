@@ -5,6 +5,7 @@ from PIL import Image, ImageDraw, ImageFont
 import spidev
 import SSD1306
 import napi_sci_hw as hw  # Импортируем наш модуль с новым названием
+import subprocess
 
 # Инициализация OLED дисплея
 SPI_PORT = 2
