@@ -2,26 +2,13 @@
 
 import time
 from datetime import datetime
-from smbus2 import SMBus
 import subprocess
-
-bus = SMBus(1)
-
-SHT30_ADDR = 0x45
 
 def read_hw():
     cmd = "hwclock -r"
     result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
     dt = datetime.fromisoformat(result.stdout.rstrip())
     return dt.date(), dt.time().replace(microsecond=0)
-
-def read_sht30(addr, prec=2):
-    bus.write_i2c_block_data(addr, 0x2C, [0x06])
-    time.sleep(0.1)
-    data = bus.read_i2c_block_data(addr, 0x00, 6)
-    ctemp = ((((data[0] * 256.0) + data[1]) * 175) / 65535.0) - 45
-    humidity = 100 * (data[3] * 256 + data[4]) / 65535.0
-    return round(ctemp, prec), round(humidity, prec)
 
 def pin_set(gpiochip, pin, value):
     cmd = f"gpioset -t 0 -c {gpiochip} {pin}={value}"
