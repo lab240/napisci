@@ -11,10 +11,13 @@
 
 ## Hardware
 
-- Gerber: /hardware/gerber/
-- BOM: /hardware/bom/
-- Схемы: /hardware/schematics/
-- Step file: /hardware/step
+- Gerber: **/hardware/napisci-gerber/**
+- BOM: **/hardware/bom/**
+- Схемы: **/hardware/schematics/**
+- Step file: **/hardware/step**
+
+- Гербер платы расширения для Napi-C \ NapiSci: **/hardware/hat-gerber**
+- Гербер модульного датчика ModBusRTU на основе WemosD1(Esp8266) mini: **/hardware/modbusrtusensor-gerber**
 
 ## Software (OS)
 
