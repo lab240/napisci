@@ -9,7 +9,14 @@
 
 ![](images/napi-sci-blocks.jpg)
 
-## Готовые прошивки
+## Hardware
+
+- Gerber: /hardware/gerber/
+- BOM: /hardware/bom/
+- Схемы: /hardware/schematics/
+- Step file: /hardware/step
+
+## Software (OS)
 
 Прошивка на основе NapiLinux с настроенными драйверами 
 
