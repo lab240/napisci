@@ -25,7 +25,32 @@
 
 - https://download.napilinux.ru/linuximg/napilinux/napi-sci/
 
+ 
+>:warning: Для работы с i2c и spi необходим корректный файл `/boot/uEnv.txt`
+
+```
+verbosity=7
+fdtfile=rk3308-rock-pi-s.dtb
+console=ttyS0,115200n8
+overlays=rk3308-i2c3-m0 rk3308-spi2-spidev rk3308-uart3 rk3308-i2c1-ds3231 rk3308-usb-pcie-modem rk3308-usb20-host
+kernelimg=Image
+extraargs=
+```
+Весь файл можно не переписывать, важно изменить строчку `overlays=`
+
+
 ## Опрос модулей и демо-скрипты
+
+>:warning: Необходимо установить следующие пакеты для python
+
+```
+pip3 install pillow
+pip3 install gpiod
+pip3 install smbus2
+pip3 install async
+pip3 install pimoroni-bme280
+
+```
 
 - napi_sci_hw.py - небольшая библиотека для чтения\записи GPIO b RTC
 - SSD1306.py - библиотека для дисплея Napi Sci
