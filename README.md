@@ -41,7 +41,7 @@ extraargs=
 
 ## Опрос модулей и демо-скрипты
 
->:warning: Все крипты в отдельной репе: https://github.com/lab240/napi-scripts
+>:warning: Все cкрипты находятся в отдельной репе: https://github.com/lab240/napi-scripts
 
 
 
